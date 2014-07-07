@@ -19,34 +19,34 @@ public class MainActivity extends Activity implements BarGraph.OnBarClickedListe
 
         ArrayList<Bar> points = new ArrayList<Bar>();
         Bar d = new Bar();
-        d.setColor(Color.parseColor("#99CC00"));
+//        d.setColor(Color.parseColor("#99CC00"));
         d.setName("Zest");
         d.setValue(1);
         Bar d2 = new Bar();
-        d2.setColor(Color.parseColor("#FFBB33"));
+//        d2.setColor(Color.parseColor("#FFBB33"));
         d2.setName("Social Intelligence");
         d2.setValue(2);
         Bar d3 = new Bar();
-        d3.setColor(Color.parseColor("#0055FF"));
+//        d3.setColor(Color.parseColor("#0055FF"));
         d3.setName("Self Control");
         d3.setValue(7);
 
         Bar d4 = new Bar();
-        d4.setColor(Color.parseColor("#99CC00"));
+//        d4.setColor(Color.parseColor("#99CC00"));
         d4.setName("Optimism");
         d4.setValue(6);
         Bar d5 = new Bar();
-        d5.setColor(Color.parseColor("#FFBB33"));
+//        d5.setColor(Color.parseColor("#FFBB33"));
         d5.setName("Grit");
         d5.setValue(2);
         Bar d6 = new Bar();
-        d6.setColor(Color.parseColor("#0055FF"));
+//        d6.setColor(Color.parseColor("#0055FF"));
         d6.setName("Gratitude");
         d6.setValue(3);
         Bar d7 = new Bar();
-        d7.setColor(Color.parseColor("#0055FF"));
+//        d7.setColor(Color.parseColor("#0055FF"));
         d7.setName("Curiosity");
-        d7.setValue(4);
+        d7.setValue(7);
 
 
         points.add(d);

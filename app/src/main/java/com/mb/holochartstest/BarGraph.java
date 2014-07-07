@@ -203,24 +203,14 @@ public class BarGraph extends View {
                     bar.setCurrentValue(bar.getCurrentValue() + changeValue);
                     needNewFrame = true;
                 } else if (bar.getCurrentValue() > bar.getValue()) {
-                    bar.setCurrentValue(bar.getCurrentValue() - 0.02f);
+                    bar.setCurrentValue(bar.getValue());
+//                    bar.setCurrentValue(bar.getCurrentValue() - 0.02f);
                     needNewFrame = true;
                 }
 
                 if (Math.abs(bar.getValue() - bar.getCurrentValue()) < 0.02f) {
                     bar.setCurrentValue(bar.getValue());
                 }
-
-//                if (percentList.get(i) < targetPercentList.get(i)) {
-//                    percentList.set(i,percentList.get(i)+0.02f);
-//                    needNewFrame = true;
-//                } else if (percentList.get(i) > targetPercentList.get(i)){
-//                    percentList.set(i,percentList.get(i)-0.02f);
-//                    needNewFrame = true;
-//                }
-//                if(Math.abs(targetPercentList.get(i)-percentList.get(i))<0.02f){
-//                    percentList.set(i,targetPercentList.get(i));
-//                }
             }
             if (needNewFrame) {
                 postDelayed(this, 20);

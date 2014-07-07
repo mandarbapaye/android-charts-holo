@@ -1,5 +1,6 @@
 package com.mb.holochartstest;
 
+import android.graphics.Color;
 import android.graphics.Path;
 import android.graphics.Region;
 
@@ -33,6 +34,14 @@ public class Bar {
     }
     public void setValue(float value) {
         this.value = value;
+
+        if (value < 3) {
+            this.setColor(Color.parseColor("#FF4400"));
+        } else if (value >= 3 && value <= 5) {
+            this.setColor(Color.parseColor("#FFDD22"));
+        } else {
+            this.setColor(Color.parseColor("#44DD00"));
+        }
     }
     public Path getPath() {
         return path;

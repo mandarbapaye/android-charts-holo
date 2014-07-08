@@ -38,7 +38,7 @@ public class Bar {
         if (value < 3) {
             this.setColor(Color.parseColor("#FF4400"));
         } else if (value >= 3 && value <= 5) {
-            this.setColor(Color.parseColor("#FFDD22"));
+            this.setColor(Color.parseColor("#FFFF00"));
         } else {
             this.setColor(Color.parseColor("#44DD00"));
         }

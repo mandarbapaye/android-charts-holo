@@ -133,9 +133,11 @@ public class BarGraph extends View {
                 canvas.drawRect(barRect, this.paint);
 
                 this.paint.setColor(Color.DKGRAY);
-                this.paint.setTextSize(15);
+//                this.paint.setTextSize(15);
+                this.paint.setTextSize(sp2px(getContext(), 10));
                 String traitTitleAndValueStr = barToDraw.getName() + "  (" + (int) barToDraw.getValue() + ")";
-                canvas.drawText(traitTitleAndValueStr, (int) ((getWidth() - leftPadding) / 2) - (this.paint.measureText(traitTitleAndValueStr) / 2), barRect.top + (barHeight / 2) + 5, this.paint);
+//                canvas.drawText(traitTitleAndValueStr, (int) ((getWidth() - leftPadding) / 2) - (this.paint.measureText(traitTitleAndValueStr) / 2), barRect.top + (barHeight / 2) + 5, this.paint);
+                canvas.drawText(traitTitleAndValueStr, (int) (leftPadding + 10), barRect.top + (barHeight / 2) + 5, this.paint);
                 this.paint.setColor(barToDraw.getColor());
 
                 if (indexSelected == count && listener != null) {
@@ -197,7 +199,7 @@ public class BarGraph extends View {
         @Override
         public void run() {
             boolean needNewFrame = false;
-            float changeValue = 0.1f;
+            float changeValue = BarGraph.this.getContext().getResources().getDisplayMetrics().density * 0.1f;
             for (Bar bar : points) {
                 if (bar.getCurrentValue() < bar.getValue()) {
                     bar.setCurrentValue(bar.getCurrentValue() + changeValue);
@@ -219,5 +221,19 @@ public class BarGraph extends View {
         }
     };
 
+    public static int dip2px(Context context, float dipValue){
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int)(dipValue * scale + 0.5f);
+    }
+
+    public static int px2dip(Context context, float pxValue){
+        final float scale = context.getResources().getDisplayMetrics().density;
+        return (int)(pxValue / scale + 0.5f);
+    }
+
+    public static int sp2px(Context context, float spValue) {
+        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (spValue * fontScale + 0.5f);
+    }
 
 }
